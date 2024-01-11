@@ -1,12 +1,14 @@
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+var cors = require('cors')
 
 const app = express();
 const PORT = 4000; // You can change the port number as needed
 
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
+app.use(cors())
 
 // API endpoint to handle the request
 app.post('/api/punchDetails', async (req, res) => {
